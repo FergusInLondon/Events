@@ -13,42 +13,40 @@ Not written yet, I thought I'd do the fun part first. ;)
 
 ### Example:
 ```php
-    <?php
-    use FergusInLondon\Events\Registry;
-    use FergusInLondon\Events\Handler;
+use FergusInLondon\Events\Registry;
+use FergusInLondon\Events\Handler;
 
-    $registry = new Registry();
-    $registry->registerHandler("event.demo", new Handler(function(){
-	    echo "See, this is a very simple event handler.\n";
-    }));
-    $registry->registerHandler("event.never", new Handler(function(){
-	    echo "This will never run, as we'll clear all handlers first.\n";
-    }));
+$registry = new Registry();
+$registry->registerHandler("event.demo", new Handler(function(){
+    echo "See, this is a very simple event handler.\n";
+}));
+$registry->registerHandler("event.never", new Handler(function(){
+    echo "This will never run, as we'll clear all handlers first.\n";
+}));
     
-    $userCreateHandler = new Handler(function($name, $id){
-		printf("User created: %s (%d)\n", $name, $id);
-		printf(
-		    "Handlers have access to the current Handler object too. (i.e %s)",
-		    $this->registryIdentifier
-		);
-    });
+$userCreateHandler = new Handler(function($name, $id){
+	printf("User created: %s (%d)\n", $name, $id);
+	printf(
+	    "Handlers have access to the current Handler object too. (i.e %s)",
+	    $this->registryIdentifier
+	);
+});
 
-    $userDeleteHandler = new Handler(function($name, $id){
-        printf("User created: %s (%d)\n", $name, $id);
-    });
+$userDeleteHandler = new Handler(function($name, $id){
+    printf("User created: %s (%d)\n", $name, $id);
+});
 
-    $registry->registerHandler("user.create", $userCreateHandler);
-    $registry->registerHandler("user.delete", $userDeleteHandler);
+$registry->registerHandler("user.create", $userCreateHandler);
+$registry->registerHandler("user.delete", $userDeleteHandler);
 
+$registry->trigger("event.demo");
+$registry->clearHandlers("event.demo");
+$registry->trigger("event.demo");
 
-	$registry->trigger("event.demo");
-	$registry->clearHandlers("event.demo");
-	$registry->trigger("event.demo");
-    
-    $user = ["name" => "J. Smith", "id" => 101];
-    $registry->trigger("user.create", $user);
-    $registry->trigger("user.delete", $user);
+$user = ["name" => "J. Smith", "id" => 101];
+$registry->trigger("user.create", $user);
+$registry->trigger("user.delete", $user);
 
-    $registry->clearHandlers();
-    $registry->trigger("event.never");
+$registry->clearHandlers();
+$registry->trigger("event.never");
 ```
