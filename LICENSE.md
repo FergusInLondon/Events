@@ -1,6 +1,6 @@
 # The MIT License (MIT)
 
-Copyright © `<year>` `<copyright holders>`
+Copyright © 2016 Fergus Morrow <fergus@fergus.london>
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
