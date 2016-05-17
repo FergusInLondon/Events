@@ -22,6 +22,11 @@ class RegistrySpec extends ObjectBehavior
 		
 	}
 	
+	function trigger_should_pass_paramters_to_handler()
+	{
+		
+	}
+	
 	function can_clear_all_handlers()
 	{
 		
