@@ -12,7 +12,7 @@ That said, if you want an incredibly lightweight system for registering and hand
 Not written yet, I thought I'd do the fun part first. ;)
 
 ### Example:
-
+```php
     <?php
     use FergusInLondon\Events\Registry;
     use FergusInLondon\Events\Handler;
@@ -51,3 +51,4 @@ Not written yet, I thought I'd do the fun part first. ;)
 
     $registry->clearHandlers();
     $registry->trigger("event.never");
+```
