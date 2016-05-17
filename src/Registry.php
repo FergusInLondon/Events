@@ -14,23 +14,6 @@ class Registry {
 	/** @var FergusInLondon\Events\Handler[] */
 	private $handlers = array();
 
-	
-	/**
-	 * Triggers an event based upon the identifying string for that
-	 *  event. Optionally accepts an array of parameters to pass on
-	 *  to the handling method.
-	 *
-	 * @param  string   $ident              Alphanumeric identifier for the event.
-	 * @param  mixed[]  $params             Optional: parameters to pass to the handler object.
-	 */
-	public function trigger($ident, $params = array()){
-		if (is_array($this->handlers[$ident])) {
-			foreach ($this->handlers[$ident] as $l){
-				call_user_func_array([$l, "respond"], [$params]);
-			}
-		}
-	}
-
 
 	/**
 	 * Registers a new handler for an event based upon an identifying
@@ -52,19 +35,20 @@ class Registry {
 		return $this;
 	}
 
-
+	
 	/**
-	 * Clears handlers for a given event if an identifier is provided,
-	 *  alternatively, clears all registered handlers if no identifier
-	 *  is available.
+	 * Triggers an event based upon the identifying string for that
+	 *  event. Optionally accepts an array of parameters to pass on
+	 *  to the handling method.
 	 *
-	 * @param  string   $ident              Alphanumeric identifier for the event to clear the handlers from.
+	 * @param  string   $ident              Alphanumeric identifier for the event.
+	 * @param  mixed[]  $params             Optional: parameters to pass to the handler object.
 	 */
-	public function clearHandlers($ident = null){
-		if (!is_null($ident) && is_array($this->handlers[$ident])) {
-			$this->handlers[$ident] = array();
-		} else if(is_null($ident)){			
-			$this->handlers = array();
+	public function trigger($ident, $params = array()){
+		if (is_array($this->handlers[$ident])) {
+			foreach ($this->handlers[$ident] as $l){
+				call_user_func_array([$l, "respond"], [$params]);
+			}
 		}
 	}
 
@@ -79,5 +63,21 @@ class Registry {
 	public function removeHandler($handlerIdentifier){
 		$identParts = explode('_', $handlerIdentifier);
 		unset( $this->handlers[ $identParts[0] ][ $identParts[1] ] );
+	}
+
+
+	/**
+	 * Clears handlers for a given event if an identifier is provided,
+	 *  alternatively, clears all registered handlers if no identifier
+	 *  is available.
+	 *
+	 * @param  string   $ident              Alphanumeric identifier for the event to clear the handlers from.
+	 */
+	public function clearHandlers($ident = null){
+		if (!is_null($ident) && is_array($this->handlers[$ident])) {
+			$this->handlers[$ident] = array();
+		} else if(is_null($ident)){			
+			$this->handlers = array();
+		}
 	}
 }
