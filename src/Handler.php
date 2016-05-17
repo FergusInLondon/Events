@@ -8,7 +8,7 @@ class Handler {
 	
 
 	public function __construct(Callable $c){
-		$this->action = $c;
+		$this->action = $c->bindTo($this, $this);
 	}
 	
 

@@ -27,6 +27,10 @@ Not written yet, I thought I'd do the fun part first. ;)
     
     $userCreateHandler = new Handler(function($name, $id){
 		printf("User created: %s (%d)\n", $name, $id);
+		printf(
+		    "Handlers have access to the current Handler object too. (i.e %s)",
+		    $this->registryIdentifier
+		);
     });
 
     $userDeleteHandler = new Handler(function($name, $id){
