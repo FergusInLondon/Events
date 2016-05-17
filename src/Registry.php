@@ -26,7 +26,7 @@ class Registry {
 	 */
 	public function registerListener($ident, Handler $listener){
 		if (!is_array($this->handlers[$ident])) {
-			$this-handlers[$ident] = array();
+			$this->handlers[$ident] = array();
 		}
 		
 		
