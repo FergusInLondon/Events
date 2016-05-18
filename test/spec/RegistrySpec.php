@@ -12,27 +12,32 @@ class RegistrySpec extends ObjectBehavior
 		$this->shouldHaveType('FergusInLondon\Events\Registry');
     }
 
-	function can_accept_handler()
+	function it_can_accept_handler($handler)
 	{
-		
+		$this->callOnWrappedObject('associateRegistry', [$registry, 'eve_0']);
+
 	}
 
-	function trigger_should_execute_callable()
+	function it_should_execute_callable_upon_trigger($handler)	{
+		$handler->beADoubleOf('FergusInLondon\Events\Handler');
+	}
+	
+	function it_should_pass_parameters_to_handler($handler)
 	{
 		
 	}
 	
-	function trigger_should_pass_paramters_to_handler()
+	function it_should_execute_correct_handlers($eventAHandler, $eventBHandler)
 	{
 		
 	}
 	
-	function can_clear_all_handlers()
+	function it_can_clear_all_handlers($eventAHandler, $eventBHandler)
 	{
 		
 	}
 	
-	function can_clear_individual_handlers()
+	function it_can_clear_individual_handlers($eventAHandler, $eventBHandler)
 	{
 		
 	}
