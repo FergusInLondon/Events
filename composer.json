@@ -14,7 +14,8 @@
     "require": {},
 	"require-dev": {
         "phpspec/phpspec": "~2.0",
-		"henrikbjorn/phpspec-code-coverage": "^2.0",
-	    "codeclimate/php-test-reporter": "dev-master"
+        "henrikbjorn/phpspec-code-coverage": "^2.0",
+        "codeclimate/php-test-reporter": "dev-master",
+        "squizlabs/php_codesniffer": "2.*"
     }
 }
