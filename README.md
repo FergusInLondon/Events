@@ -1,16 +1,33 @@
 # Events: A simple events registry and handling system
 
-[![Build Status](https://travis-ci.org/FergusInLondon/Events.svg?branch=master)](https://travis-ci.org/FergusInLondon/Events)  [![Code Climate](https://codeclimate.com/github/FergusInLondon/Events/badges/gpa.svg)](https://codeclimate.com/github/FergusInLondon/Events) [![Issue Count](https://codeclimate.com/github/FergusInLondon/Events/badges/issue_count.svg)](https://codeclimate.com/github/FergusInLondon/Events)
+[![Build Status](https://travis-ci.org/FergusInLondon/Events.svg?branch=master)](https://travis-ci.org/FergusInLondon/Events) [![Test Coverage](https://codeclimate.com/github/FergusInLondon/Events/badges/coverage.svg)](https://codeclimate.com/github/FergusInLondon/Events/coverage) [![Code Climate](https://codeclimate.com/github/FergusInLondon/Events/badges/gpa.svg)](https://codeclimate.com/github/FergusInLondon/Events) [![Issue Count](https://codeclimate.com/github/FergusInLondon/Events/badges/issue_count.svg)](https://codeclimate.com/github/FergusInLondon/Events)
 
 This is an incredibly simple events registry and handling system, which is composed of a total of two objects: a registry object, and a subclassable base handler.
 
 The primary intention behind this project was for a three part blog post about writing small modular components, packaging them as composer modules and subsequently using a continuous integration system to ensure their status.
 
-Although that was the original intention, if you need an incredibly lightweight system for registering and handling events, then this will most likely suffice!
+Despite this original intention, if you need an incredibly lightweight system for registering and handling events, then this will most likely suffice!
+
+On the other hand, if you're powering something that is larger and has an excess of events, then you may wish to consider an option which *compiles* your events in to a map - allowing better performance.
 
 ### Blog Post(s)
 
 The blog posts are not yet written, but will be made available on [Fergus.London](https://fergus.london).
+
+## Installation
+
+Install via Composer, as `fergusinlondon/events`.
+
+> $ composer require fergusinlondon/events=dev-master
+> 
+> Warning: This development build of composer is over 60 days old. It is recommended to update it by running "/usr/local/bin/composer self-update" to get the latest version.<br />
+> ./composer.json has been updated
+> 
+> Loading composer repositories with package information
+> 
+> Updating dependencies (including require-dev)<br />
+>  - Installing fergusinlondon/events (dev-master b245be2)<br />
+>    Cloning b245be2bae5e546cbd33a279c17ff0652aca33f8
 
 ## Example:
 
