@@ -1,0 +1,6 @@
+suites:
+    events:
+        namespace: FergusInLondon\Events
+        psr4_prefix: FergusInLondon\Events
+        src_path: src
+        spec_path: test

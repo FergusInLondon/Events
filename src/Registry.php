@@ -24,9 +24,9 @@ class Registry {
 	 *
 	 * @return self
 	 */
-	public function registerListener($ident, Handler $listener){
-		if (!is_array($this->handlers[$ident])) {
-			$this-handlers[$ident] = array();
+	public function registerHandler($ident, Handler $listener){
+		if (!isset($this->handlers[$ident]) || !is_array($this->handlers[$ident])) {
+			$this->handlers[$ident] = array();
 		}
 		
 		
@@ -45,7 +45,7 @@ class Registry {
 	 * @param  mixed[]  $params             Optional: parameters to pass to the handler object.
 	 */
 	public function trigger($ident, $params = array()){
-		if (is_array($this->handlers[$ident])) {
+		if (isset($this->handlers[$ident]) && is_array($this->handlers[$ident])) {
 			foreach ($this->handlers[$ident] as $l){
 				call_user_func_array([$l, "respond"], [$params]);
 			}
@@ -74,7 +74,7 @@ class Registry {
 	 * @param  string   $ident              Alphanumeric identifier for the event to clear the handlers from.
 	 */
 	public function clearHandlers($ident = null){
-		if (!is_null($ident) && is_array($this->handlers[$ident])) {
+		if (!is_null($ident) && isset($this->handlers[$ident]) && is_array($this->handlers[$ident])) {
 			$this->handlers[$ident] = array();
 		} else if(is_null($ident)){			
 			$this->handlers = array();

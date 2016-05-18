@@ -36,7 +36,7 @@ class Handler {
 	 *
 	 * @param array     $params      Parameters to be passed to the handling Callable, given to the event when it was triggered.
 	 */
-	public function respond($params){
+	public function respond($params = array()){
 		return call_user_func_array($this->action, $params);
 	}
 	

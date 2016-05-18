@@ -2,11 +2,17 @@
     "name": "fergusinlondon/events",
     "description": "A very simple Events Handling system.. so simple it's essentially a toy.",
     "license": "GPL",
+	"autoload": {
+		"psr-4": { "FergusInLondon\\Events\\": "src/" }
+	},
     "authors": [
         {
             "name": "Fergus Morrow",
             "email": "fergus@fergus.london"
         }
     ],
-    "require": {}
+    "require": {},
+	"require-dev": {
+        "phpspec/phpspec": "~2.0"
+    }
 }
