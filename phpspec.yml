@@ -9,7 +9,7 @@ code_coverage:
   format:
     - clover
   output:
-    clover: tests/coverage.xml
+    clover: build/logs/clover.xml
 
 extensions:
     - PhpSpec\Extension\CodeCoverageExtension
