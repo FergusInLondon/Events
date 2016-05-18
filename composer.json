@@ -13,6 +13,8 @@
     ],
     "require": {},
 	"require-dev": {
-        "phpspec/phpspec": "~2.0"
+        "phpspec/phpspec": "~2.0",
+		"henrikbjorn/phpspec-code-coverage": "^2.0",
+	    "codeclimate/php-test-reporter": "dev-master"
     }
 }

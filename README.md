@@ -1,6 +1,6 @@
 # Events: A simple events registry and handling system
 
-[![Build Status](https://travis-ci.org/FergusInLondon/Events.svg?branch=master)](https://travis-ci.org/FergusInLondon/Events)
+[![Build Status](https://travis-ci.org/FergusInLondon/Events.svg?branch=master)](https://travis-ci.org/FergusInLondon/Events)  [![Code Climate](https://codeclimate.com/github/FergusInLondon/Events/badges/gpa.svg)](https://codeclimate.com/github/FergusInLondon/Events) [![Issue Count](https://codeclimate.com/github/FergusInLondon/Events/badges/issue_count.svg)](https://codeclimate.com/github/FergusInLondon/Events)
 
 This is an incredibly simple events registry and handling system, which is composed of a total of two objects: a registry object, and a subclassable base handler.
 

@@ -4,3 +4,12 @@ suites:
         psr4_prefix: FergusInLondon\Events
         src_path: src
         spec_path: test
+
+code_coverage:
+  format:
+    - clover
+  output:
+    clover: tests/coverage.xml
+
+extensions:
+    - PhpSpec\Extension\CodeCoverageExtension
